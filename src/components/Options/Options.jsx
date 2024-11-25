@@ -1,8 +1,11 @@
+import css from "./Options.module.css";
+
 const Options = ({ options, totalFeedback, updateFeedback, resetFeedback }) => {
   return (
-    <div>
+    <div className={css.btns}>
       {options.map((option) => (
         <button
+          className={css.btn}
           key={option}
           onClick={() => updateFeedback(option)}
           type="button"
@@ -12,7 +15,7 @@ const Options = ({ options, totalFeedback, updateFeedback, resetFeedback }) => {
       ))}
 
       {totalFeedback > 0 && (
-        <button onClick={resetFeedback} type="button">
+        <button className={css.btn} onClick={resetFeedback} type="button">
           Reset
         </button>
       )}

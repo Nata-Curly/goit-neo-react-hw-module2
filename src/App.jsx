@@ -6,7 +6,7 @@ import Feedback from "./components/Feedback/Feedback";
 import Options from "./components/Options/Options";
 import Notification from "./components/Notification/Notification";
 
-const defaultState = () => {
+const defaultFeedbackState = () => {
   const currentFeedback = localStorage.getItem("feedback");
   if (currentFeedback) {
     return JSON.parse(currentFeedback);
@@ -19,7 +19,7 @@ const defaultState = () => {
 };
 
 function App() {
-  const [feedback, setFeedback] = useState(defaultState);
+  const [feedback, setFeedback] = useState(defaultFeedbackState);
 
   useEffect(() => {
     localStorage.setItem("feedback", JSON.stringify(feedback));
